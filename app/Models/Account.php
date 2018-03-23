@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for departments
+ * Elequent model for accounts
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>
@@ -13,9 +13,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Department
+ * Class Account
  */
-class Department extends Model
+class Account extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -23,26 +23,16 @@ class Department extends Model
      * @var array
      */
     protected $fillable = [
-        'lead_account_id'
+        'username', 'password', 'name', 'email'
     ];
     
     /**
-     * Returns the lead account
-     *
-     * @return \App\Model\Account
-     */
-    public function lead_account()
-    {
-        return $this->belongsTo('App\Models\Account');
-    }
-    
-    /**
-     * Retrieve a list of accounts that are part of this department
+     * Retrieve all departments of which this account is a member
      *
      * @return array
      */
-    public function accounts()
+    public function departments()
     {
-        return $this->belongsToMany('App\Models\Account');
+        return $this->belongsToMany('App\Models\Department');
     }
 }
