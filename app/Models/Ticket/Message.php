@@ -1,0 +1,45 @@
+<?php
+/**
+ * Elequent model for ticket messages
+ *
+ * @since 0.1
+ * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>
+ * @copyright 2018 North Sea Open Source Initiative (www.nsosi.com)
+ * @license http://www.opensource.org/licenses/mit-license.php MIT
+ */
+ 
+namespace App\Models\Ticket;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class Message
+ */
+class Message extends Model
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'ticket_messages';
+    
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'ticket_id'
+    ];
+    
+    /**
+     * Obtain the Messageable that morphs to this TicketMessage.
+     *
+     * @return mixed
+     */
+    public function messageable()
+    {
+        return $this->morphTo();
+    }
+}
