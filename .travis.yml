@@ -1,0 +1,17 @@
+language: php
+
+services:
+  - mysql
+
+php:
+  - 7.1
+
+before_script:
+  - cp .env.travis .env
+  - mysql -e 'CREATE DATABASE openhelpdesk_test;'
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+
+script:
+  - vendor/bin/phpunit
