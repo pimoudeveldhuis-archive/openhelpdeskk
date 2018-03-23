@@ -8,15 +8,22 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
  
-namespace App\Models;
+namespace App\Models\Ticket\Message;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TicketMessageEmail
+ * Class Email
  */
-class TicketMessageEmail extends Model
+class Email extends Model
 {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'ticket_message_emails';
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -33,6 +40,6 @@ class TicketMessageEmail extends Model
      */
     public function message()
     {
-        return $this->morphOne('App\Models\TicketMessage', 'messageable');
+        return $this->morphOne('App\Models\Ticket\Message', 'messageable');
     }
 }

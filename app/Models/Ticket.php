@@ -26,7 +26,12 @@ class Ticket extends Model
         'uid', 'subject', 'department_id', 'owner_account_id'
     ];
     
+    /**
+     * Get all messages belonging to this ticket.
+     *
+     * @return array Returns an array filled with Ticket\Message instances
+     */
     public function messages() {
-        return $this->hasMany('App\Models\TicketMessage');
+        return $this->hasMany('App\Models\Ticket\Message');
     }
 }

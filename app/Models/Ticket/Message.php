@@ -8,15 +8,22 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
  
-namespace App\Models;
+namespace App\Models\Ticket;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TicketMessage
+ * Class Message
  */
-class TicketMessage extends Model
+class Message extends Model
 {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'ticket_messages';
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -25,13 +32,6 @@ class TicketMessage extends Model
     protected $fillable = [
         'ticket_id'
     ];
-
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = false;
     
     /**
      * Obtain the Messageable that morphs to this TicketMessage.
