@@ -1,10 +1,19 @@
+dist: trusty
 language: php
-
-services:
-  - mysql
 
 php:
   - 7.1
+
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - libmysqlclient-dev
+      - libmysqlclient20
+      - mysql-community-client
+      - mysql-common
+      - mysql-community-server
 
 before_script:
   - cp .env.travis .env
@@ -15,3 +24,4 @@ before_script:
 
 script:
   - vendor/bin/phpunit
+  - mysql --version
