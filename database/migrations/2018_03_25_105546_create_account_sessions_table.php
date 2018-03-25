@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAccountsTable extends Migration
+class CreateAccountSessionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('account_sessions', function (Blueprint $table) {
             $table->increments('id');
             
-            $table->string('username')->index();
-            $table->string('password');
-            
-            $table->string('name');
-            $table->string('email');
-            
-            $table->boolean('administrator')->default(false);
-            $table->string('twofactor')->nullable();
+            $table->unsignedInteger('account_id')->index();
+            $table->boolean('twofactor')->nullable();
+            $table->uuid('token')->index();
+            $table->ipAddress('ip_address');
             
             $table->timestamps();
             $table->softDeletes();
@@ -37,6 +33,6 @@ class CreateAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accounts');
+        Schema::dropIfExists('account_sessions');
     }
 }

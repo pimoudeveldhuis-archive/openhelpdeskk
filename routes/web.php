@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('login', 'AccountController@render_login')->name('login');
+Route::post('login', 'AccountController@do_login')->name('do-login');
