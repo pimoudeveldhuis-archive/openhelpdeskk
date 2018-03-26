@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-	<title>openHelpdesk | Log in</title>
+	<title>openHelpdesk | Two-factor</title>
 	
 	<link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
@@ -30,10 +30,10 @@
 		</div>
 		
 		<div class="login-box-body">
-			<p class="login-box-msg">Welcome [NAME]<br/>
+			<p class="login-box-msg">Welcome {{ $_account->name }}<br/>
 			Please enter your two-factor code</p>
 			
-			<form action="{{ route('do-login') }}" method="post">
+			<form action="{{ route('do-twofactor') }}" method="post">
 				{{ csrf_field() }}
 				
 				@if ($errors->any())
@@ -41,17 +41,10 @@
 				@endif
 				
 				<div class="form-group has-feedback">
-					<input name="twofactor" type="text" class="form-control" placeholder="Two-Factor Code" value="">
+					<input name="twofactor" type="text" class="form-control" placeholder="Two-Factor Code" />
 					<span class="glyphicon glyphicon-qrcode form-control-feedback"></span>
 				</div>
 				
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="checkbox icheck">
-							<label><input name="remember_computer" type="checkbox" value="checked" @if(old('remember_computer') == 'checked') checked @endif"> Remember this computer</label>
-						</div>
-					</div>
-				</div>
 				<div class="row">
 					<div class="col-xs-12">
 						<button type="submit" class="btn btn-info btn-block">Authenticate</button>
@@ -59,6 +52,7 @@
 				</div>
 			</form>
 		</div>
+		
 		<p class="login-box-msg"><small>Powered by NSOSI's openHelpdesk</small></p>
 	</div>
 

@@ -13,6 +13,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
+use PragmaRX\Google2FA\Google2FA;
+
 use App\Models\Account;
 use App\Models\AccountSession;
 
@@ -21,6 +23,7 @@ class AccountController extends Controller
     /**
      * Displays the login form
      *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\View\View
      */
     public function render_login(Request $request)
@@ -61,5 +64,38 @@ class AccountController extends Controller
             return redirect()->route('dashboard');
         else
             return redirect()->route('twofactor');
+    }
+    
+    /**
+     * Displays the twofactor form
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\View\View
+     */
+    public function render_twofactor(Request $request)
+    {
+        return View('twofactor');
+    }
+    
+    /**
+     * Handles the login POST
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return mixed
+     */
+    public function do_twofactor(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'twofactor' => 'required'
+        ]);
+                
+        $google2fa = new Google2FA();
+        if($google2fa->verifyKey($this->_account->twofactor, $request->input('twofactor'), 8)) {
+            $this->_account->log('twofactor', ['success' => true]);
+            return redirect('dashboard');
+        }
+        
+        $this->_account->log('twofactor', ['success' => false]);
+        return redirect('twofactor')->withErrors(['twofactor' => 'The two-factor code you entered is incorrect']);
     }
 }
