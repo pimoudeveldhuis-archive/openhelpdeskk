@@ -29,7 +29,7 @@ class Email extends Model
      *
      * @var string
      */
-    protected $table = 'setting_email';
+    protected $table = 'settings_emails';
 
     /**
      * The attributes that are mass assignable.

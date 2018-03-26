@@ -8,7 +8,7 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
 
-namespace App\Models\Settings\Email;
+namespace App\Models\Settings\Emails;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,7 +31,7 @@ class IMAP extends Model
      *
      * @var string
      */
-    protected $table = 'settings_email_imap';
+    protected $table = 'settings_emails_imaps';
 
     /**
      * The attributes that are mass assignable.
