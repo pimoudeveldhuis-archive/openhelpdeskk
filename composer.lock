@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "21be47477535ce7dba1ca016427788ee",
+    "content-hash": "bd4d0459ded988b6224d027cc7205580",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2452,6 +2452,57 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "webklex/laravel-imap",
+            "version": "1.0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Webklex/laravel-imap.git",
+                "reference": "3c3fd5fe0c07ececd5c1837c09503e1888d59e27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Webklex/laravel-imap/zipball/3c3fd5fe0c07ececd5c1837c09503e1888d59e27",
+                "reference": "3c3fd5fe0c07ececd5c1837c09503e1888d59e27",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=5.0.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webklex\\IMAP\\": "src/IMAP"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Malte Goldenbaum",
+                    "email": "github@webklex.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel IMAP client",
+            "homepage": "https://github.com/webklex/laravel-imap",
+            "keywords": [
+                "imap",
+                "laravel",
+                "laravel-imap",
+                "mail",
+                "webklex"
+            ],
+            "time": "2018-03-18T17:10:50+00:00"
         }
     ],
     "packages-dev": [
