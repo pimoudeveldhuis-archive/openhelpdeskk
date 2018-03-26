@@ -16,13 +16,17 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             
-            $table->string('username');
+            $table->string('username')->index();
             $table->string('password');
             
             $table->string('name');
             $table->string('email');
             
+            $table->boolean('administrator')->default(false);
+            $table->string('twofactor')->nullable();
+            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
