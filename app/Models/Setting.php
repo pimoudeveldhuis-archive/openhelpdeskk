@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for the Settings table
+ * Eloquent model for the Settings table
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>

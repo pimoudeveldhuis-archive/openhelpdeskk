@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for accounts
+ * Eloquent model for accounts
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for ticket messages
+ * Eloquent model for ticket messages that are created via email
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>
@@ -8,21 +8,21 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
  
-namespace App\Models\Ticket;
+namespace App\Models\Tickets\Messages;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Message
+ * Class Email
  */
-class Message extends Model
+class Email extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'ticket_messages';
+    protected $table = 'tickets_messages_emails';
     
     /**
      * The attributes that are mass assignable.
@@ -30,16 +30,16 @@ class Message extends Model
      * @var array
      */
     protected $fillable = [
-        'ticket_id'
+        'from_name', 'from_email', 'subject', 'message'
     ];
     
     /**
-     * Obtain the Messageable that morphs to this TicketMessage.
+     * Returns the TicketMessage the morphable TicketMessageEmail belonged too.
      *
-     * @return mixed
+     * @return \App\Models\TicketMessage
      */
-    public function messageable()
+    public function message()
     {
-        return $this->morphTo();
+        return $this->morphOne('App\Models\Ticket\Message', 'messageable');
     }
 }
