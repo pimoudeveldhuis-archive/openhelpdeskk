@@ -15,21 +15,28 @@ namespace App\Models\Settings;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Email
+ * Class EmailServer
  *
  * @package App\Models\Settings
  * @property int id
  * @property string name
  * @property boolean delete_original
  */
-class Email extends Model
+class EmailServer extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'settings_emails';
+    protected $table = 'settings_emailservers';
+
+    /**
+     * No timestamps are used with this model.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -41,12 +48,12 @@ class Email extends Model
     ];
 
     /**
-     * Obtain the email_settingable that morphs to this App\Models\Settings\Email.
+     * Obtain the emailserverable that morphs to this App\Models\Settings\EmailServer.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function email_settingable()
+    public function emailserverable()
     {
-        return $this->morphTo();
+        return $this->morphTo('emailserverable');
     }
 }

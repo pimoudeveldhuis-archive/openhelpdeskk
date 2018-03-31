@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSettingsEmails extends Migration
+class CreateSettingsEmailServersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateSettingsEmails extends Migration
      */
     public function up()
     {
-        Schema::create('settings_emails', function (Blueprint $table) {
+        Schema::create('settings_emailservers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->boolean('delete_original');
-            $table->morphs('email_settingable');
+
+            $table->unsignedInteger('emailserverable_id');
+            $table->string('emailserverable_type');
+            $table->index(['emailserverable_type', 'emailserverable_id'], "emailserverable_index");
         });
     }
 
@@ -28,6 +31,6 @@ class CreateSettingsEmails extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings_emails');
+        Schema::dropIfExists('settings_emailservers');
     }
 }
