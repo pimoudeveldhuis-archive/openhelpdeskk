@@ -8,14 +8,14 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
 
-namespace App\Models\Settings\EmailServers;
+namespace App\Models\Settings\Email\Servers;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class IMAP
  *
- * @package App\Models\Settings\EmailServers
+ * @package App\Models\Settings\Emails\Servers
  * @property int id
  * @property string host
  * @property int port
@@ -31,7 +31,7 @@ class IMAP extends Model
      *
      * @var string
      */
-    protected $table = 'settings_emailservers_imaps';
+    protected $table = 'settings_emails_servers_imaps';
 
     /**
      * No timestamps are used with this model.
@@ -50,12 +50,12 @@ class IMAP extends Model
     ];
 
     /**
-     * Obtains the App\Models\Settings\EmailServer that morphs to this App\Models\Settings\EmailServers\IMAP.
+     * Obtains the App\Models\Settings\Emails\Server that morphs to this App\Models\Settings\Emails\Servers\IMAP.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */
-    public function emailserver()
+    public function server()
     {
-        return $this->morphOne('App\Models\Settings\EmailServer', 'emailserverable');
+        return $this->morphOne('App\Models\Settings\Emails\Server', 'serverable');
     }
 }

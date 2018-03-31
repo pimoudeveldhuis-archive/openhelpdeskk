@@ -10,26 +10,26 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
 
-namespace App\Models\Settings;
+namespace App\Models\Settings\Emails;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class EmailServer
+ * Class Server
  *
- * @package App\Models\Settings
+ * @package App\Models\Settings\Emails
  * @property int id
  * @property string name
  * @property boolean delete_original
  */
-class EmailServer extends Model
+class Server extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'settings_emailservers';
+    protected $table = 'settings_emails_servers';
 
     /**
      * No timestamps are used with this model.
@@ -48,12 +48,12 @@ class EmailServer extends Model
     ];
 
     /**
-     * Obtain the emailserverable that morphs to this App\Models\Settings\EmailServer.
+     * Obtain the serverable that morphs to this App\Models\Settings\Emails\Server.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function emailserverable()
+    public function serverable()
     {
-        return $this->morphTo('emailserverable');
+        return $this->morphTo('serverable');
     }
 }
