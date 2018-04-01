@@ -20,6 +20,8 @@ class CreateTicketMessageEmailsTable extends Migration
             $table->string('from_email');
             $table->string('subject');
             $table->text('message');
+            $table->timestamp('sent_on');
+            $table->json('data');
             
             $table->timestamps();
         });

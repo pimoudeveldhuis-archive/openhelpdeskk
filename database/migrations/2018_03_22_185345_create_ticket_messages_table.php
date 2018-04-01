@@ -16,7 +16,7 @@ class CreateTicketMessagesTable extends Migration
         Schema::create('ticket_messages', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('ticket_id')->index();
+            $table->integer('ticket_id')->index();
             $table->morphs('messageable');
             
             $table->timestamps();

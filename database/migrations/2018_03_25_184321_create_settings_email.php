@@ -17,6 +17,9 @@ class CreateSettingsEmail extends Migration
             $table->increments('id');
             $table->string('name');
             $table->boolean('delete_original');
+            $table->string('inbox_name');
+            $table->boolean('use_archive');
+            $table->string('archive_name')->nullable();
             $table->morphs('email_settingable');
         });
     }

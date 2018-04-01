@@ -12,15 +12,21 @@
 
 namespace App\Models\Settings;
 
+use App\Classes\IServerable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Email
  *
  * @package App\Models\Settings
- * @property int id
- * @property string name
- * @property boolean delete_original
+ * @property int $id
+ * @property string $name
+ * @property boolean $delete_original
+ * @property string $inbox_name
+ * @property boolean $use_archive
+ * @property string $archive_name
+ * @property-read IServerable email_settingable
+ * @mixin \Eloquent
  */
 class Email extends Model
 {
@@ -37,7 +43,7 @@ class Email extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'delete_original'
+        'name', 'delete_original', 'inbox_name', 'use_archive', 'archive_name'
     ];
 
     /**
@@ -48,5 +54,21 @@ class Email extends Model
     public function email_settingable()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Gets all the email that resides on the related server.
+     *
+     * @return \Illuminate\Support\Collection - A Collection of Ticket\Message\Email objects reflecting the emails obtained from the server.
+     * @throws \Exception - Various Exceptions may be thrown depending on the underlying implementation of the IServerable interface.
+     * @throws \Throwable - Various Throwables may be thrown depending on the underlying implementation of the IServerable interface.
+     */
+    public function getEmail()
+    {
+        $server = $this->email_settingable;
+        return $server->getEmailsFromMailBox(
+            $this->inbox_name,
+            $this->use_archive,
+            $this->archive_name);
     }
 }

@@ -14,6 +14,16 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Email
+ *
+ * @property int $id
+ * @property string $from_name
+ * @property string $from_email
+ * @property string $subject
+ * @property string $message
+ * @property \Carbon\Carbon $sent_on
+ * @property string $data
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  */
 class Email extends Model
 {
@@ -30,13 +40,13 @@ class Email extends Model
      * @var array
      */
     protected $fillable = [
-        'from_name', 'from_email', 'subject', 'message'
+        'from_name', 'from_email', 'subject', 'message', 'sent_on', 'data'
     ];
-    
+
     /**
      * Returns the TicketMessage the morphable TicketMessageEmail belonged too.
      *
-     * @return \App\Models\TicketMessage
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */
     public function message()
     {

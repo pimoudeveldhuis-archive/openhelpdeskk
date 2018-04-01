@@ -14,6 +14,11 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Message
+ *
+ * @property int $id
+ * @property int $ticket_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  */
 class Message extends Model
 {
