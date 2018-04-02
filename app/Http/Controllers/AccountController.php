@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for accounts
+ * AccountController to handle the login, logout, twofactor and password reset
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>
@@ -18,6 +18,9 @@ use PragmaRX\Google2FA\Google2FA;
 use App\Models\Account;
 use App\Models\AccountSession;
 
+/**
+ * Class AccountController
+ */
 class AccountController extends Controller
 {
     /**
