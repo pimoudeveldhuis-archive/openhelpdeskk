@@ -16,7 +16,7 @@ class CreateAccountLogsTable extends Migration
         Schema::create('account_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('account_id')->index();
-            $table->enum('action', ['login']);
+            $table->enum('action', ['login', 'twofactor']);
             $table->json('args');
             
             $table->timestamp('created_at');
