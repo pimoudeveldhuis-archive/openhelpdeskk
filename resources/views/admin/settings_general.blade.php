@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	
-	<title>openHelpdesk | Dashboard</title>
+	<title>openHelpdesk | Settings - General</title>
 	
 	<link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/components/Ionicons/css/ionicons.min.css">
 	<link rel="stylesheet" href="/css/openhelpdesk.css">
 	<link rel="stylesheet" href="/css/skin-nsosi-oh.css">
+	<link rel="stylesheet" href="/components/plugins/iCheck/square/blue.css">
 
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -157,8 +158,8 @@
 		<div class="content-wrapper">
 			<section class="content-header">
 				<h1>
-					Dashboard
-					<small>Showing openHelpdesk statistics</small>
+					General Settings
+					<small>Configure your openHelpdesk installation</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -168,154 +169,40 @@
 
 			<section class="content container-fluid">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="info-box">
-							<span class="info-box-icon bg-green"><i class="fa fa-ticket"></i></span>
-							<div class="info-box-content">
-								<span class="info-box-text">New tickets</span>
-								<span class="info-box-number">511 <small>in the last 24 hours</small></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="info-box">
-							<span class="info-box-icon bg-yellow"><i class="fa fa-hourglass-half"></i></span>
-							<div class="info-box-content">
-								<span class="info-box-text">Nearly expiring tickets</span>
-								<span class="info-box-number">1,024</span>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="info-box">
-							<span class="info-box-icon bg-red"><i class="fa fa-hourglass-end"></i></span>
-							<div class="info-box-content">
-								<span class="info-box-text">Expired tickets</span>
-								<span class="info-box-number">760</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8 col-sm-12 col-xs-12">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="box box-primary">
-									<div class="box-header with-border">
-										<h3 class="box-title">Latest tickets</h3>
-									</div>
-									<div class="box-body">
-										<div class="table-responsive">
-											<table class="table no-margin">
-												<thead>
-													<tr>
-														<th>Ticket ID</th>
-														<th>Subject</th>
-														<th>Status</th>
-														<th>Department</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td><a href="pages/examples/invoice.html">OR9842</a></td>
-														<td>Leverage agile frameworks to provide...</td>
-														<td><span class="label label-info">NEW-SLA</span></td>
-														<td>HR</td>
-													</tr>
-													<tr>
-														<td><a href="pages/examples/invoice.html">OR1848</a></td>
-														<td>Organically grow the holistic world...</td>
-														<td><span class="label label-success">Open</span></td>
-														<td>Accounting</td>
-													</tr>
-													<tr>
-														<td><a href="pages/examples/invoice.html">OR7429</a></td>
-														<td>Bring to the table win-win survival strategies</td>
-														<td><span class="label label-danger">Overdue</span></td>
-														<td>DevOps</td>
-													</tr>
-													<tr>
-														<td><a href="pages/examples/invoice.html">OR7429</a></td>
-														<td>User generated content in real-time</td>
-														<td><span class="label label-warning">In progress</span></td>
-														<td>The Boss</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="box-footer clearfix">
-										<a href="javascript:void(0)" class="btn btn-sm btn-success btn-flat pull-left">Create new ticket</a>
-										<a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-right">View all tickets</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="info-box bg-yellow">
-									<span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
-									<div class="info-box-content">
-										<span class="info-box-text">SLA tickets timer</span>
-										<span class="info-box-number">2 <small>open tickets</small></span>
-										<div class="progress">
-											<div class="progress-bar" style="width: 70%"></div>
-										</div>
-										<span class="progress-description">First ticket should be answered within <strong>2 hours and 40  minutes</strong></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="box box-primary direct-chat direct-chat-info">
-									<div class="box-header with-border">
-										<h3 class="box-title">Direct Chat</h3>
-										<div class="box-tools pull-right">
-											<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
-										</div>
-									</div>
-									<div class="box-body">
-										<div class="direct-chat-messages">
-											<div class="direct-chat-msg">
-												<div class="direct-chat-info clearfix">
-													<span class="direct-chat-name pull-left">Chris van Zanten &lt;c.vanzanten@guest.com&gt;</span>
-													<span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
-												</div>
-												<img class="direct-chat-img" src="/img/user1-128x128.jpg" alt="Message User Image">
-												<div class="direct-chat-text">
-													Is this template really for free? That's unbelievable!
-												</div>
-											</div>
-											<div class="direct-chat-msg right">
-												<div class="direct-chat-info clearfix">
-													<span class="direct-chat-name pull-right">Pim &lt;p.oudeveldhuis@nsosi.com&gt;</span>
-													<span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-												</div>
-												<img class="direct-chat-img" src="/img/user3-128x128.jpg" alt="Message User Image">
-												<div class="direct-chat-text">
-													You better believe it!
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="box-footer">
-										<form action="#" method="post">
-											<div class="input-group">
-												<input type="text" name="message" placeholder="Type Message ..." class="form-control">
-												<span class="input-group-btn">
-													<button type="submit" class="btn btn-info btn-flat">Send</button>
-												</span>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="col-md-12">
+          				<div class="box box-primary">
+            				<div class="box-header with-border">
+              					<h3 class="box-title">System Settings</h3>
+            				</div>
+            				<form role="form" class="form-horizontal">
+              					<div class="box-body">
+                					<div class="form-group">
+										<label for="inputURL" class="col-sm-2 control-label">openHelpdesk URL</label>
+                  						<div class="col-sm-10">
+                    						<input type="text" class="form-control" id="inputURL" placeholder="Enter openHelpdesk URL">
+                  						</div>	
+                					</div>
+									<div class="form-group">
+										<label for="inputDepartment" class="col-sm-2 control-label">Default department</label>
+                  						<div class="col-sm-10">
+											<select name="default_department" class="form-control" id="inputDepartment">
+												<option selected>HQ</option>
+											</select>
+                  						</div>	
+                					</div>
+									<div class="form-group">
+										<label for="inputNotify" class="col-sm-2 control-label">Notify me</label>
+                  						<div class="col-sm-10">
+											<input type="checkbox" name="notify_me" value="true" id="inputNotify" checked>
+                  						</div>	
+                					</div>
+              					</div>
+              					<div class="box-footer">
+                					<button type="submit" class="btn btn-primary">Submit</button>
+              					</div>
+            				</form>
+          				</div>
+        			</div>
 				</div>
 			</section>
 		</div>
@@ -381,6 +268,17 @@
 	<script src="/components/jquery/dist/jquery.min.js"></script>
 	<script src="/components/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/js/adminlte.min.js"></script>
+	<script src="/components/plugins/iCheck/icheck.min.js"></script>
+	
+	<script>
+		$(function() {
+			$('input').iCheck({
+				checkboxClass: 'icheckbox_square-blue',
+				radioClass: 'iradio_square-blue',
+				increaseArea: '20%' // optional
+			});
+		});
+	</script>
 </body>
 
 </html>
