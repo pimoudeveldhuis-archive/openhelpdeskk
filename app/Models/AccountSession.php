@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for sessions
+ * Eloquent model for sessions
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>
