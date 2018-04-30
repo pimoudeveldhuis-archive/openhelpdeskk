@@ -10,15 +10,15 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
 
-namespace App\Models\Settings;
+namespace App\Models\Settings\Emails;
 
 use App\Classes\IServerable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Email
+ * Class Server
  *
- * @package App\Models\Settings
+ * @package App\Models\Settings\Emails
  * @property int $id
  * @property string $name
  * @property boolean $delete_original
@@ -28,14 +28,21 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read IServerable email_settingable
  * @mixin \Eloquent
  */
-class Email extends Model
+class Server extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'setting_email';
+    protected $table = 'settings_emails_servers';
+
+    /**
+     * No timestamps are used with this model.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -47,13 +54,13 @@ class Email extends Model
     ];
 
     /**
-     * Obtain the email_settingable that morphs to this App\Models\Settings\Email.
+     * Obtain the serverable that morphs to this App\Models\Settings\Emails\Server.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function email_settingable()
+    public function serverable()
     {
-        return $this->morphTo();
+        return $this->morphTo('serverable');
     }
 
     /**

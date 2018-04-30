@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for departments
+ * Eloquent model for departments
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>

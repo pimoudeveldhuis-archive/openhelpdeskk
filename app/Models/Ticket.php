@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for tickets
+ * Eloquent model for tickets
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>

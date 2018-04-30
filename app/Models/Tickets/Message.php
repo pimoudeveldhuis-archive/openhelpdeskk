@@ -1,6 +1,6 @@
 <?php
 /**
- * Elequent model for ticket messages
+ * Eloquent model for ticket messages
  *
  * @since 0.1
  * @author Pim Oude Veldhuis <p.oudeveldhuis@nsosi.com>
@@ -8,7 +8,7 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
  
-namespace App\Models\Ticket;
+namespace App\Models\Tickets;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,7 +27,7 @@ class Message extends Model
      *
      * @var string
      */
-    protected $table = 'ticket_messages';
+    protected $table = 'tickets_messages';
     
     /**
      * The attributes that are mass assignable.

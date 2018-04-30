@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', 'DashboardController@render')->name('dashboard');
+
 Route::get('login', 'AccountController@render_login')->name('login');
 Route::post('login', 'AccountController@do_login')->name('do-login');
 
