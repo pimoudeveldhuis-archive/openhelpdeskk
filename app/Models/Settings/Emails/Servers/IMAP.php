@@ -8,15 +8,17 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  */
 
-namespace App\Models\Settings\Email\Servers;
+namespace App\Models\Settings\Emails\Servers;
 
 use App\Classes\IServerable;
-use App\Models\Ticket\Message;
+
+use App\Models\Tickets\Message;
+use App\Models\Tickets\Messages\Email;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Webklex\IMAP\Client;
-use App\Models\Ticket\Message\Email;
+
 
 /**
  * Class IMAP
@@ -68,18 +70,18 @@ class IMAP extends Model implements IServerable
 
     /**
      * Obtains all the emails from the target mailbox and either archives or deletes the original messages.
+     * Saves the email information into a new App\Models\Tickets\Messages\Email object for each email found.
      *
      * @param string $mailBox - The mailbox from which to obtain all the emails.
      * @param bool $useArchive - true: Archives original emails to the provided archive box; false: Deletes the original emails.
      * @param string $archiveBox - The archive box name.
-     * @return Collection - A Collection of Ticket\Message\Email objects reflecting the emails obtained from the server.
      * @throws \Exception
      * @throws \Throwable
      * @throws \Webklex\IMAP\Exceptions\ConnectionFailedException
      * @throws \Webklex\IMAP\Exceptions\GetMessagesFailedException
      * @throws \Webklex\IMAP\Exceptions\MessageSearchValidationException
      */
-    public function getEmailsFromMailBox(string $mailBox, bool $useArchive = true, string $archiveBox = "archive")
+    public function obtainEmailsInMailBox(string $mailBox, bool $useArchive = true, string $archiveBox = "archive")
     {
         $client = new Client([
             'host'          => $this->host,
@@ -93,7 +95,6 @@ class IMAP extends Model implements IServerable
         $client->connect();
         $folder = $client->getFolder($mailBox);
         $IMAPMessages = $folder->getMessages();
-        $emails = array();
 
         foreach($IMAPMessages as $IMAPMessage)
         {
@@ -129,10 +130,7 @@ class IMAP extends Model implements IServerable
             {
                 if ($useArchive) $IMAPMessage->moveToFolder($archiveBox);
                 else $IMAPMessage->delete();
-                $emails[] = $email;
             }
         }
-
-        return collect($emails);
     }
 }

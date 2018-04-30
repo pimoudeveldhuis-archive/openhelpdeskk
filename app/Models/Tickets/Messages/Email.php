@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $data
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @mixin \Eloquent
  */
 class Email extends Model
 {

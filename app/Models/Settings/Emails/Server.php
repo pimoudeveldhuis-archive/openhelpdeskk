@@ -14,6 +14,7 @@ namespace App\Models\Settings\Emails;
 
 use App\Classes\IServerable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Server
@@ -21,11 +22,12 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models\Settings\Emails
  * @property int $id
  * @property string $name
+ * @property boolean $enabled
  * @property boolean $delete_original
  * @property string $inbox_name
  * @property boolean $use_archive
  * @property string $archive_name
- * @property-read IServerable email_settingable
+ * @property-read IServerable serverable
  * @mixin \Eloquent
  */
 class Server extends Model
@@ -64,18 +66,31 @@ class Server extends Model
     }
 
     /**
-     * Gets all the email that resides on the related server.
+     * Call the implementation of the obtainEmailsInMailBox from the serverable.
      *
-     * @return \Illuminate\Support\Collection - A Collection of Ticket\Message\Email objects reflecting the emails obtained from the server.
      * @throws \Exception - Various Exceptions may be thrown depending on the underlying implementation of the IServerable interface.
      * @throws \Throwable - Various Throwables may be thrown depending on the underlying implementation of the IServerable interface.
      */
-    public function getEmail()
+    public function obtainEmails()
     {
-        $server = $this->email_settingable;
-        return $server->getEmailsFromMailBox(
+        $this->serverable->obtainEmailsInMailBox(
             $this->inbox_name,
             $this->use_archive,
             $this->archive_name);
+    }
+
+    /**
+     * Sets the enabled field on this Server to the provided state.
+     *
+     * @param bool $state - True when the Server needs to be enabled, false if otherwise.
+     * @throws \Exception - An \Exception thrown when something goes wrong while saving the new state.
+     * @throws \Throwable - A \Throwable thrown when something goes wrong while saving the new state.
+     */
+    public function setEnabled(bool $state = true)
+    {
+        $this->enabled = $state;
+        DB::transaction(function() {
+                $this->save();
+            }, 3);
     }
 }

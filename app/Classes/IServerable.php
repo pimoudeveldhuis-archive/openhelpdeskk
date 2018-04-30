@@ -17,11 +17,11 @@ interface IServerable
 {
     /**
      * Obtains all the emails from the target mailbox and either archives or deletes the original messages.
+     * Saves the email information into a new App\Models\Tickets\Messages\Email object for each email found.
      *
      * @param string $mailBox - The mailbox from which to obtain all the emails.
      * @param bool $useArchive - true: Archives original emails to the provided archive box; false: Deletes the original emails.
      * @param string $archiveBox - The archive box name.
-     * @return Collection - A Collection of Ticket\Message\Email objects reflecting the emails obtained from the server.
      */
-    public function getEmailsFromMailBox(string $mailBox, bool $useArchive = true, string $archiveBox = "archive");
+    public function obtainEmailsInMailBox(string $mailBox, bool $useArchive = true, string $archiveBox = "archive");
 }

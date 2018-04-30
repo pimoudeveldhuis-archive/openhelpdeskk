@@ -16,8 +16,8 @@ class CreateSettingsEmailsServersTable extends Migration
         Schema::create('settings_emails_servers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('enabled');
             $table->boolean('delete_original');
-
             $table->string('inbox_name');
             $table->boolean('use_archive');
             $table->string('archive_name')->nullable();
