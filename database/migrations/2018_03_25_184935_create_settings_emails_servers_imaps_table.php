@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSettingsEmailImap extends Migration
+class CreateSettingsEmailsServersImapsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSettingsEmailImap extends Migration
      */
     public function up()
     {
-        Schema::create('settings_email_imap', function (Blueprint $table) {
+        Schema::create('settings_emails_servers_imaps', function (Blueprint $table) {
             $table->increments('id');
             $table->string('host');
             $table->integer('port');
@@ -31,6 +31,6 @@ class CreateSettingsEmailImap extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings_email_imap');
+        Schema::dropIfExists('settings_emails_servers_imaps');
     }
 }
