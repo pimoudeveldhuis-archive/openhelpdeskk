@@ -213,12 +213,11 @@
 							</div>
 							<div class="box-body no-padding">
 								<ul class="nav nav-pills nav-stacked">
-									<li class="active"><a href="#"><i class="fa fa-star-o"></i> All</a></li>
-									<li><a href="#"><i class="fa fa-inbox"></i> Accounting
-										<span class="label label-primary pull-right">12</span></a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i> Shipping</a></li>
-									<li><a href="#"><i class="fa fa-file-text-o"></i> Development</a></li>
-									<li><a href="#"><i class="fa fa-filter"></i> Research <span class="label label-warning pull-right">65</span></a>
+									<li class="active"><a href="#"><i class="fa fa-home"></i> All</a></li>
+									<li><a href="#"><i class="fa fa-inbox"></i> Accounting <span class="label label-primary pull-right">12</span></a></li>
+									<li><a href="#"><i class="fa fa-inbox"></i> Shipping</a></li>
+									<li><a href="#"><i class="fa fa-inbox"></i> Development</a></li>
+									<li><a href="#"><i class="fa fa-inbox"></i> Research <span class="label label-warning pull-right">65</span></a>
 									</li>
 								</ul>
 							</div>
@@ -229,8 +228,9 @@
 							</div>
 							<div class="box-body no-padding">
 								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"><i class="fa fa-flag text-yellow"></i> Flagged</a></li>
+									<li><a href="#"><i class="fa fa-circle text-red"></i> Urgent</a></li>
 									<li><a href="#"><i class="fa fa-circle-o text-green"></i> Open</a></li>
-									<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> In progress</a></li>
 									<li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Closed</a></li>
 								</ul>
 							</div>
@@ -269,7 +269,7 @@
 										<tbody>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -279,7 +279,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -289,7 +289,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -299,7 +299,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -309,7 +309,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -319,7 +319,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -329,7 +329,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -339,7 +339,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -349,7 +349,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -359,7 +359,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -369,7 +369,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -379,7 +379,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -389,7 +389,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag-o text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -399,7 +399,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>
@@ -409,7 +409,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox"></td>
-												<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+												<td class="mailbox-flag"><a href="#"><i class="fa fa-flag text-yellow"></i></a></td>
 												<td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
 												<td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
 												</td>

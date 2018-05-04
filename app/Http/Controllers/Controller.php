@@ -19,7 +19,10 @@ class Controller extends BaseController {
     {
         $this->middleware(function ($request, $next) {
             if(Cookie::has('openhelpdesk'))
-                $this->_account = AccountSession::where('token', Cookie::get('openhelpdesk'))->first()->account;
+                $account_session = AccountSession::where('token', Cookie::get('openhelpdesk'))->first();
+
+            if($account_session !== null)
+                $this->_account = $account_session->account;
             
             if($this->_account !== null)
                 view()->share('_account', $this->_account);

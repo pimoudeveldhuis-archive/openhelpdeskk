@@ -18,3 +18,5 @@ Route::post('login', 'AccountController@do_login')->name('do-login');
 
 Route::get('twofactor', 'AccountController@render_twofactor')->name('twofactor');
 Route::post('twofactor', 'AccountController@do_twofactor')->name('do-twofactor');
+
+Route::get('tickets', 'TicketController@index')->name('tickets');

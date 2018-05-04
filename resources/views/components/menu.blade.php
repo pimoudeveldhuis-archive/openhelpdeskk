@@ -27,7 +27,7 @@
 					</span>
 				</a>
 				<ul class="treeview-menu">
-					<li class="{{ Request::is('/tickets/overview') ? 'active' : '' }}"><a href="/tickets/overview"><i class="fa fa-columns"></i> Overview</a></li>
+					<li class="{{ Request::is(route('tickets')) ? 'active' : '' }}"><a href="{{ route('tickets') }}"><i class="fa fa-columns"></i> Overview</a></li>
 					<li class="{{ Request::is('/tickets/overdue') ? 'active' : '' }}"><a href="/tickets/overdue"><i class="fa fa-calendar"></i> Overdue</a></li>
 					<li class="{{ Request::is('/tickets/closed') ? 'active' : '' }}"><a href="/tickets/closed"><i class="fa fa-lock"></i> Closed</a></li>
 					<li class="{{ Request::is('/tickets/new') ? 'active' : '' }}"><a href="/tickets/new"><i class="fa fa-plus"></i> New</a></li>
