@@ -9,6 +9,7 @@ public/ @thyone
 # Models
 app/Models @pimoudeveldhuis
 database/ @pimoudeveldhuis
+tests/ @pimoudeveldhuis
 
 # Logic
 app/Http @Aurolieen

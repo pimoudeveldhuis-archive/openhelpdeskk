@@ -211,6 +211,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Settings' => App\Helpers\SettingsHelper::class,
+        'TicketHelper' => App\Helpers\TicketHelper::class,
     ],
 
 ];
