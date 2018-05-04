@@ -21,7 +21,7 @@ class Controller extends BaseController {
             if(Cookie::has('openhelpdesk'))
                 $account_session = AccountSession::where('token', Cookie::get('openhelpdesk'))->first();
 
-            if($account_session !== null)
+            if(isset($account_session) && $account_session !== null)
                 $this->_account = $account_session->account;
             
             if($this->_account !== null)
