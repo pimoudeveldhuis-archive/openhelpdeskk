@@ -6,6 +6,9 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+/**
+ * Class SettingsTest
+ */
 class SettingTest extends TestCase
 {
     use \Illuminate\Foundation\Testing\DatabaseMigrations;
