@@ -146,6 +146,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Webklex\IMAP\Providers\LaravelServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -182,6 +183,7 @@ return [
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
+        'Client' => Webklex\IMAP\Facades\Client::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
@@ -209,6 +211,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Settings' => App\Helpers\SettingsHelper::class,
+        'TicketHelper' => App\Helpers\TicketHelper::class,
     ],
 
 ];

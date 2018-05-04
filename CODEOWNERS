@@ -2,5 +2,16 @@
 # Each line is a file pattern followed by one or more owners,
 # the last matching pattern has the most precendence.
 
-# Core team members from NSOSI
-@pimoudeveldhuis @thyone
+# Views and other resources
+resources/ @thyone
+public/ @thyone
+
+# Models
+app/Models @pimoudeveldhuis
+database/ @pimoudeveldhuis
+tests/ @pimoudeveldhuis
+
+# Logic
+app/Http @Aurolieen
+app/Helpers @Aurolieen
+app/Providers @Aurolieen

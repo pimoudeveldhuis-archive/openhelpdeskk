@@ -1,5 +1,6 @@
-dist: trusty
+sudo: required
 language: php
+dist: trusty
 
 php:
   - 7.1
@@ -14,14 +15,16 @@ addons:
       - mysql-community-client
       - mysql-common
       - mysql-community-server
+  chrome: stable
 
 before_script:
   - cp .env.travis .env
+  - travis_retry composer install --no-interaction
   - mysql -e 'CREATE DATABASE openhelpdesk_test;'
-  - composer self-update
-  - composer install --no-interaction
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   - php artisan key:generate
+  - php artisan serve > /dev/null 2>&1 &
 
 script:
   - vendor/bin/phpunit
-  - mysql --version
+  - php artisan dusk
