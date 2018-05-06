@@ -14,6 +14,12 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Ticket
+ *
+ * @property string $uid
+ * @property string $subject
+ * @property int $department_id
+ * @property int $owner_account_id
+ * @mixin \Eloquent
  */
 class Ticket extends Model
 {

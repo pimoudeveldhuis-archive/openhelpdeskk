@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $ticket_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @mixin \Eloquent
  */
 class Message extends Model
 {

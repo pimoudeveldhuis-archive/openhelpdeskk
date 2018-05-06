@@ -18,7 +18,7 @@ class CreateTicketsTable extends Migration
             $table->char('uid', 7);
 
             $table->unsignedInteger('department_id')->index();
-            $table->unsignedInteger('owner_account_id')->index();
+            $table->unsignedInteger('owner_account_id')->nullable()->index();
             
             $table->string('subject');
             

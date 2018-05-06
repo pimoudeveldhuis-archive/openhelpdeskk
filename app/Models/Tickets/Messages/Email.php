@@ -18,8 +18,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $from_name
  * @property string $from_email
+ * @property string $to
  * @property string $subject
- * @property string $message
+ * @property string $body
  * @property \Carbon\Carbon $sent_on
  * @property string $data
  * @property \Carbon\Carbon $created_at
@@ -41,7 +42,7 @@ class Email extends Model
      * @var array
      */
     protected $fillable = [
-        'from_name', 'from_email', 'subject', 'message', 'sent_on', 'data'
+        'from_name', 'from_email', 'to',  'subject', 'body', 'sent_on', 'data'
     ];
 
     /**

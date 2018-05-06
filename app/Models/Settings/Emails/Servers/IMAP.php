@@ -72,9 +72,9 @@ class IMAP extends Model implements IServerable
      * Obtains all the emails from the target mailbox and either archives or deletes the original messages.
      * Saves the email information into a new App\Models\Tickets\Messages\Email object for each email found.
      *
-     * @param string $mailBox - The mailbox from which to obtain all the emails.
-     * @param bool $useArchive - true: Archives original emails to the provided archive box; false: Deletes the original emails.
-     * @param string $archiveBox - The archive box name.
+     * @param string $mailBox The mailbox from which to obtain all the emails.
+     * @param bool $useArchive true: Archives original emails to the provided archive box; false: Deletes the original emails.
+     * @param string $archiveBox The archive box name.
      * @throws \Exception
      * @throws \Throwable
      * @throws \Webklex\IMAP\Exceptions\ConnectionFailedException
@@ -103,7 +103,6 @@ class IMAP extends Model implements IServerable
             $data = new \stdClass();
             $data->messageID = $IMAPMessage->getMessageID();
             $data->sender = $IMAPMessage->getSender();
-            $data->to = $IMAPMessage->GetTo();
             $data->CC = $IMAPMessage->getCC();
             $data->BCC = $IMAPMessage->getBCC();
             $data->rawHeader = $IMAPMessage->getHeader();
@@ -112,6 +111,7 @@ class IMAP extends Model implements IServerable
             $email = new Email([
                 $from[0]->mail,         // email address
                 $from[0]->personal,     // email name
+                json_encode($IMAPMessage->getTo()),
                 $IMAPMessage->getSubject(),
                 $IMAPMessage->getTextBody(),
                 $IMAPMessage->getDate(),
