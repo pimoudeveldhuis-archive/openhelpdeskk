@@ -57,6 +57,7 @@ class AccountController extends Controller
         }
         
         $session = $account->create_session($request->ip());
+        $account->log('login', ['success' => true]);
         
         if($request->input('remember_me') === 'checked')
             Cookie::queue('openhelpdesk', $session->token, 44640);
